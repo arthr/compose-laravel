@@ -5,14 +5,9 @@ RUN pecl install mcrypt-1.0.2
 RUN docker-php-ext-enable mcrypt
 RUN docker-php-ext-install pdo mbstring
 
-# Caso necessário, instalar composer/git/zip-unzip
-RUN apt-get install -y git
-RUN apt-get install -y curl
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-#RUN apt-get install -y zip unzip php-zip
-RUN echo "deb http://security.ubuntu.com/ubuntu bionic-security main universe" >> /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get install -y zip unzip php7.2-zip
+# Caso necessário, instalar composer
+#RUN apt-get install -y curl
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /app
 COPY . /app
