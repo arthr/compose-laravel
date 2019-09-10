@@ -3,12 +3,17 @@ services:
   web:
     build: .
     ports:
-        - 8000:8000
+      - 8000:8000
     volumes:
-        - ./:/app
+      - ./:/app
+    networks:
+      - backend
     links:
-    - redis
+      -redis
   redis:
     image: redis:5-alpine
     ports:
       - 16379:6379
+networks:
+  backend:
+    driver: bridge

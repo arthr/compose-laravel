@@ -11,7 +11,7 @@ class RedisController extends Controller
     public function index(Request $request)
     {
         try {
-            $redis = Redis::connection('0.0.0.0', 16379);
+            $redis = Redis::connection('redis', 6379);
             return response('test');
         } catch (Exception $e) {
             dd($e->getMessage());
