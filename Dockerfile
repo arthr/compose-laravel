@@ -12,6 +12,7 @@ WORKDIR /app
 COPY . /app
 
 #RUN composer install
+RUN php artisan key:generate
 
 CMD php artisan serve --host=0.0.0.0 --port=8000
 
