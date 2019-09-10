@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
+use Illuminate\Redis\RedisManager;
 
 class RedisController extends Controller
 {
     public function index(Request $request)
     {
         try {
-            $redis = Redis::connection();
+            $redis = RedisManager::connection();
             dd($redis);
         } catch (Exception $e) {
             dd($e->getMessage());
