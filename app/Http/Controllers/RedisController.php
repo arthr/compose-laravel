@@ -14,7 +14,7 @@ class RedisController extends Controller
             $redis = Redis::connection('127.0.0.1', 6379);
             return response('test');
         } catch (Exception $e) {
-            return reponse('redis connection error');
+            dd($e->getMessage());
         }
     }
 }
