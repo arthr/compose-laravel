@@ -6,3 +6,9 @@ services:
         - 8000:8000
     volumes:
         - ./:/app
+    links:
+    - redis
+  redis:
+    image: redis:5-alpine
+    ports:
+      - 16379:6379
