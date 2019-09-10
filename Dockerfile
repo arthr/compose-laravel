@@ -5,12 +5,14 @@ RUN pecl install mcrypt-1.0.2
 RUN docker-php-ext-enable mcrypt
 RUN docker-php-ext-install pdo mbstring
 
-#RUN apt-get -y curl
+# Caso necessário, instalar composer
+#RUN apt-get install -y curl
 #RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /app
 COPY . /app
 
+# Caso necessário, instalar pacotes c/ composer
 #RUN composer install
 RUN php artisan key:generate
 
