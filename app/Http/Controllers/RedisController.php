@@ -9,11 +9,12 @@ class RedisController extends Controller
 {
     public function index(Request $request)
     {
-        try {
-            $redis = Redis::connection('0.0.0.0', 6379);
-            return response('redis working');
-        } catch (\Predis\Connection\ConnectionException $e) {
-            return reponse('redis connection error');
-        }
+        return response('redis ctrl');
+        // try {
+        //     $redis = Redis::connection('0.0.0.0', 6379);
+        //     return response('redis working');
+        // } catch (\Predis\Connection\ConnectionException $e) {
+        //     return reponse('redis connection error');
+        // }
     }
 }
