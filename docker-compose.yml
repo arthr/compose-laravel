@@ -9,7 +9,7 @@ services:
     networks:
       - backend
     links:
-      -redis
+      - redis
   redis:
     image: redis:5-alpine
     ports:
